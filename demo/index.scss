@@ -1,0 +1,65 @@
+@import '../node_modules/normalize.css/normalize';
+@import '../src/index';
+
+$c-white: #ffffff;
+$c-black: #000000;
+$c-title: #ffffff;
+$c-inverse: #009688;
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: $c-white;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  color: $c-inverse;
+  font-size: 8vw;
+  margin: 0;
+  padding: 1em 1% 0;
+  text-align: center;
+
+  &.demo-Default {
+    color: $c-black;
+  }
+}
+
+.demo-Inverse {
+  background: $c-inverse;
+
+  h1 {
+    color: $c-white;
+  }
+}
+
+ul {
+  & {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2.5em 0 1.5em;
+
+    @media (max-width: 801px) {
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }
+
+  li {
+    list-style: none;
+    margin: 0 1% 1em;
+    width: 48%;
+
+    @media (max-width: 801px) {
+      width: 31.333%;
+    }
+
+    @media (max-width: 481px) {
+      width: 23%;
+    }
+  }
+}
