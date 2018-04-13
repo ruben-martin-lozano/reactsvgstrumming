@@ -35,6 +35,17 @@ h1 {
   }
 }
 
+.sb-Strumming {
+  &:hover text {
+    fill: $c-inverse;
+  }
+
+  &:hover line {
+    stroke: $c-inverse;
+  }
+}
+
+
 ul {
   & {
     display: flex;

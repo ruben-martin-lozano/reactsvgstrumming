@@ -1,40 +1,42 @@
-import React, { Fragment } from 'react'
+// import React, { Fragment } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
-import StrummingPattern from '../src/index.jsx'
+import Strumming from '../src/index.jsx'
 
-const strummingPatterns = [
-  { name: 'Latin', pattern: 'dDuuDu' }
+const strummings = [
+  { name: 'Latin', pattern: 'd-Du-uDu' }
 ]
 
+/*
 const demo = (
   <Fragment>
     <h1>Strumming Patterns</h1>
     <ul>
-      {strummingPatterns.map((pattern, index) => (
+      {strummings.map((pattern, index) => (
         <li key={index}>
-          <StrummingPattern pattern={pattern} />
+          <Strumming pattern={pattern} />
         </li>
       ))}
     </ul>
     <div className='demo-Inverse'>
       <h1>Strumming Patterns (inverse)</h1>
       <ul>
-        {strummingPatterns.map((pattern, index) => (
+        {strummings.map((pattern, index) => (
           <li key={index}>
-            <StrummingPattern pattern={pattern} />
+            <Strumming pattern={pattern} />
           </li>
         ))}
       </ul>
     </div>
     <h1 className='demo-Default'>Strumming Patterns (default colors)</h1>
     <ul>
-      {strummingPatterns.map((pattern, index) => (
+      {strummings.map((pattern, index) => (
         <li key={index}>
-          <StrummingPattern pattern={pattern} />
+          <Strumming pattern={pattern} />
         </li>
       ))}
     </ul>
   </Fragment>
 )
-
-ReactDOM.render(demo, document.getElementById('demo'))
+*/
+ReactDOM.render(<Strumming name={strummings[0].name} pattern={strummings[0].pattern} />, document.getElementById('demo'))
