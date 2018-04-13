@@ -1,7 +1,7 @@
 {
-  "name": "react-svg-strumming-pattern",
+  "name": "react-svg-strumming",
   "version": "0.0.1",
-  "description": "React Svg Strumming Pattern Component",
+  "description": "React Svg Strumming Component",
   "private": true,
   "main": "dist/",
   "scripts": {
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://ruben-martin-lozano@bitbucket.org/ruben-martin-lozano/reactsvgstrummingpattern.git"
+    "url": "git+https://ruben-martin-lozano@bitbucket.org/ruben-martin-lozano/reactsvgstrumming.git"
   },
   "keywords": [],
   "author": "Rubén Martín Lozano",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/ruben-martin-lozano/reactsvgstrummingpattern#readme",
+  "homepage": "https://bitbucket.org/ruben-martin-lozano/reactsvgstrumming#readme",
   "peerDependencies": {
     "react": "0.14 || 15 || 16"
   },

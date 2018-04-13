@@ -1,2 +1,2 @@
-# ReactSvgStrummingPattern
-ReactSvgStrummingPattern
+# ReactSvgStrumming
+ReactSvgStrumming
