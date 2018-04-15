@@ -25,6 +25,15 @@ const strummingComponents = {
 const Strumming = ({ inverse, name, pattern, shuffle }) => {
   if (!name || !pattern) return null
 
+  /*
+  const chordNameHeight = 55
+  const viewBox = {
+    height: fretBoardHeight + nutHeight + chordNameHeight + (mutedStringHeight / 2) + lineThick - 1,
+    width: fretBoardWidth + (radius * 2) + (lineDeflect / 4),
+    x: -radius + lineDeflect,
+    y: nutY - chordNameHeight
+  }
+  */
   const baseClassName = cx('sb-Strumming', {
     'sb-Strumming--inverse': inverse
   })

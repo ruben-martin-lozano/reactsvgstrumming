@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom'
 import Strumming from '../src/index.jsx'
 
 const strummings = [
-  { name: 'Latin', pattern: 'dxDuU-Du' }
+  { name: 'Latin', pattern: 'DUDUDUDU' }
 ]
 
 /*
