@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Line = ({ color, lineThick }) => (
+const Line = ({ centerX, color, lineThick }) => (
   <g>
-    <line stroke={color} x1={'5'} y1={'50'} x2={'35'} y2={'50'} strokeWidth={lineThick} strokeLinecap='round' />
+    <line stroke={color} x1={centerX - 5} y1={'50'} x2={centerX + 5} y2={'50'} strokeWidth={lineThick} strokeLinecap='round' />
   </g>
 )
 
 Line.propTypes = {
+  centerX: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
   lineThick: PropTypes.number.isRequired
 }
