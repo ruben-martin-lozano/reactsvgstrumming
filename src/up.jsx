@@ -6,7 +6,7 @@ const Up = ({ color, isSmall, lineThick, position, width, xCenter }) => {
   const yStart = !isSmall ? 0 : 20
   const yEnd = !isSmall ? 100 : 80
   const yDeflect = !isSmall ? 20 : 35
-  const xDeflect = !isSmall ? 20 : 15
+  const xDeflect = width > 45 ? (!isSmall ? 20 : 15) : width / 3
   const points = `${xCenter - xDeflect},${yDeflect} ${xCenter},${yStart} ${xCenter + xDeflect},${yDeflect}`
 
   return (

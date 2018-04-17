@@ -11,7 +11,6 @@ module.exports = {
     'comma-dangle': ['error', 'only-multiline'],
     'no-console': 'warn',
     'no-debugger': 'error',
-    'no-nested-ternary': 'warn',
     'no-unused-expressions': 0,
     'react/default-props-match-prop-types': 'warn',
     'react/jsx-equals-spacing': ['warn', 'never'],
