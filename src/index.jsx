@@ -5,24 +5,21 @@ import Down from './down'
 import Up from './up'
 import Mute from './mute'
 import Line from './line'
-// import Name from './name'
+import Name from './name'
 
 const lineThick = 4
-// const xCenterDeflect = 20 + (lineThick / 2)
-// const xCenterDeflect = 0
-
 const strummingComponents = {
-  'D': (width, color, index, xCenter) => <Down color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} />,
-  'd': (width, color, index, xCenter) => <Down color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} isSmall />,
-  'U': (width, color, index, xCenter) => <Up color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} />,
-  'u': (width, color, index, xCenter) => <Up color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} isSmall />,
-  'x': (width, color, index, xCenter) => <Mute color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} />,
-  '-': (width, color, index, xCenter) => <Line color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} />
+  'D': (width, color, index, xCenter) => <Down color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
+  'd': (width, color, index, xCenter) => <Down color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} isSmall />,
+  'U': (width, color, index, xCenter) => <Up color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
+  'u': (width, color, index, xCenter) => <Up color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} isSmall />,
+  'x': (width, color, index, xCenter) => <Mute color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
+  '-': (width, color, index, xCenter) => <Line color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />
 }
-
-// const chordNameHeight = 55
+const chordNameHeight = 45
+const yBase = chordNameHeight
 const viewBox = {
-  height: 100 + lineThick,
+  height: 100 + lineThick + chordNameHeight,
   width: 400,
   x: -lineThick / 2,
   y: -lineThick / 2
@@ -53,9 +50,9 @@ const Strumming = ({ color, inverse, name, pattern, shuffle }) => {
     return components
   }
 
-  // <Name color={color} name={name} />
   return (
     <svg className={baseClassName} viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}>
+      <Name color={color} name={name} xBase={viewBox.width / 2} yBase={yBase} />
       {getComponents()}
     </svg>
   )

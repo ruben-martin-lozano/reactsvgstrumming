@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Name = ({ color, name }) => (
+const Name = ({ color, name, xBase, yBase }) => (
   <text
+    className='sb-StrummingName'
     textAnchor='middle'
-    x={0}
-    y={0}
+    x={xBase}
+    y={yBase - 20}
     fill={color}
   >
     {name}
@@ -14,7 +15,9 @@ const Name = ({ color, name }) => (
 
 Name.propTypes = {
   color: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired
+  name: PropTypes.string.isRequired,
+  xBase: PropTypes.number.isRequired,
+  yBase: PropTypes.number.isRequired
 }
 
 export default Name

@@ -2,4 +2,9 @@
   & {
     display: block;
   }
+
+  &Name {
+    font-size: 2em;
+    user-select: none;
+  }
 }
