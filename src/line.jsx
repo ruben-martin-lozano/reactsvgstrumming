@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Line = ({ centerX, color, lineThick }) => (
   <g>
-    <line stroke={color} x1={centerX - 5} y1={'50'} x2={centerX + 5} y2={'50'} strokeWidth={lineThick} strokeLinecap='round' />
+    <line stroke={color} x1={centerX - 7} y1={'50'} x2={centerX + 7} y2={'50'} strokeWidth={lineThick} strokeLinecap='round' />
   </g>
 )
 

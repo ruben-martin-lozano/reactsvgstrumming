@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Arrow from './arrow'
 
 const Up = ({ color, centerX, isSmall, lineThick }) => {
   const yStart = !isSmall ? 0 : 20
@@ -9,10 +10,14 @@ const Up = ({ color, centerX, isSmall, lineThick }) => {
   const points = `${centerX - xDeflect},${yDeflect} ${centerX},${yStart} ${centerX + xDeflect},${yDeflect}`
 
   return (
-    <g>
-      <line stroke={color} x1={centerX} y1={yStart} x2={centerX} y2={yEnd} strokeWidth={lineThick} strokeLinecap='round' />
-      <polyline stroke={color} points={points} fill='none' strokeWidth={lineThick} strokeLinejoin='round' strokeLinecap='round' />
-    </g>
+    <Arrow
+      centerX={centerX}
+      color={color}
+      lineThick={lineThick}
+      points={points}
+      yStart={yStart}
+      yEnd={yEnd}
+    />
   )
 }
 
