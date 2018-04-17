@@ -7,8 +7,9 @@ const color = '#009688'
 const inverseColor = '#ffffff'
 
 const strummings = [
-  { name: 'Latin', pattern: 'd-Du-uDu' },
+  { name: 'Latin', pattern: 'd-DdUuxu' },
   { name: 'Down and Ups', pattern: 'DDUUDDUU' },
+  { name: 'Down and Ups', pattern: 'DxUUDDxU' },
   { name: 'Latin', pattern: 'D-D--U-UD-DUDU' },
 ]
 

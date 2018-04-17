@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import cx from 'classnames'
 import Down from './down'
-import SmallDown from './smallDown'
 import Up from './up'
-import SmallUp from './smallUp'
 import Mute from './mute'
 import Line from './line'
 // import Name from './name'
@@ -14,11 +12,10 @@ const centerXDeflect = 20 + (lineThick / 2)
 
 const strummingComponents = {
   'D': (centerX, color, index) => <Down color={color} centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
-  'd': (centerX, color, index) => <SmallDown color={color} centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
+  'd': (centerX, color, index) => <Down color={color} isSmall centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
   'U': (centerX, color, index) => <Up centerX={(centerX * index) + centerXDeflect} color={color} lineThick={lineThick} key={index} />,
-  'u': (centerX, color, index) => <SmallUp color={color} centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
+  'u': (centerX, color, index) => <Up color={color} isSmall centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
   'x': (centerX, color, index) => <Mute color={color} centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
-  'X': (centerX, color, index) => <Mute color={color} centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
   '-': (centerX, color, index) => <Line color={color} centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />
 }
 
