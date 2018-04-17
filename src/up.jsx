@@ -2,16 +2,16 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Arrow from './arrow'
 
-const Up = ({ color, centerX, isSmall, lineThick }) => {
+const Up = ({ color, isSmall, lineThick, position, width, xCenter }) => {
   const yStart = !isSmall ? 0 : 20
   const yEnd = !isSmall ? 100 : 80
   const yDeflect = !isSmall ? 20 : 35
   const xDeflect = !isSmall ? 20 : 15
-  const points = `${centerX - xDeflect},${yDeflect} ${centerX},${yStart} ${centerX + xDeflect},${yDeflect}`
+  const points = `${xCenter - xDeflect},${yDeflect} ${xCenter},${yStart} ${xCenter + xDeflect},${yDeflect}`
 
   return (
     <Arrow
-      centerX={centerX}
+      xCenter={xCenter}
       color={color}
       lineThick={lineThick}
       points={points}
@@ -26,10 +26,12 @@ Up.defaultProps = {
 }
 
 Up.propTypes = {
-  centerX: PropTypes.number.isRequired,
   color: PropTypes.string.isRequired,
   isSmall: PropTypes.bool,
-  lineThick: PropTypes.number.isRequired
+  lineThick: PropTypes.number.isRequired,
+  position: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
+  xCenter: PropTypes.number.isRequired
 }
 
 export default Up

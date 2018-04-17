@@ -8,15 +8,16 @@ import Line from './line'
 // import Name from './name'
 
 const lineThick = 4
-const centerXDeflect = 20 + (lineThick / 2)
+// const xCenterDeflect = 20 + (lineThick / 2)
+// const xCenterDeflect = 0
 
 const strummingComponents = {
-  'D': (centerX, color, index) => <Down color={color} centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
-  'd': (centerX, color, index) => <Down color={color} isSmall centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
-  'U': (centerX, color, index) => <Up centerX={(centerX * index) + centerXDeflect} color={color} lineThick={lineThick} key={index} />,
-  'u': (centerX, color, index) => <Up color={color} isSmall centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
-  'x': (centerX, color, index) => <Mute color={color} centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />,
-  '-': (centerX, color, index) => <Line color={color} centerX={(centerX * index) + centerXDeflect} lineThick={lineThick} key={index} />
+  'D': (width, color, index, xCenter) => <Down color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} />,
+  'd': (width, color, index, xCenter) => <Down color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} isSmall />,
+  'U': (width, color, index, xCenter) => <Up color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} />,
+  'u': (width, color, index, xCenter) => <Up color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} isSmall />,
+  'x': (width, color, index, xCenter) => <Mute color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} />,
+  '-': (width, color, index, xCenter) => <Line color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} />
 }
 
 // const chordNameHeight = 55
@@ -34,14 +35,28 @@ const Strumming = ({ color, inverse, name, pattern, shuffle }) => {
     'sb-Strumming--inverse': inverse
   })
 
-  const centerX = (400 / (pattern.replace(/\s/g, '').length))
+  const patternSanitized = pattern.replace(/\s/g, '')
+  const width = viewBox.width / patternSanitized.length
 
-  let strummings = pattern.replace(/\s/g, '').split('').map((strummingKey, index) => strummingComponents[strummingKey] && strummingComponents[strummingKey](centerX, color, index))
+  const getComponents = () => {
+    const components = []
+
+    patternSanitized.split('').map((strummingKey, index) => {
+      const component = strummingComponents[strummingKey]
+      const xCenter = (width * index) + (width / 2) - (lineThick / 2)
+
+      component && components.push(
+        component(width, color, index, xCenter)
+      )
+    })
+
+    return components
+  }
 
   // <Name color={color} name={name} />
   return (
     <svg className={baseClassName} viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}>
-      {strummings}
+      {getComponents()}
     </svg>
   )
 }
