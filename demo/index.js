@@ -3,8 +3,14 @@ import React, {Fragment} from 'react'
 import ReactDOM from 'react-dom'
 import Strumming from '../src/index.jsx'
 
-const color = '#009688'
-const inverseColor = '#ffffff'
+const colors = {
+  simbols: '#009688',
+  strummingName: '#00796b'
+}
+const inverseColor = {
+  simbols: '#ffffff',
+  strummingName: '#ffffff'
+}
 
 const strummings = [
   { name: 'Latin', pattern: 'd-Du-uDu' },
@@ -18,7 +24,7 @@ const demo = (
     <ul>
       {strummings.map(({name, pattern}, index) => (
         <li key={index}>
-          <Strumming color={color} name={name} pattern={pattern} />
+          <Strumming colors={colors} name={name} pattern={pattern} />
         </li>
       ))}
     </ul>
@@ -27,7 +33,7 @@ const demo = (
       <ul>
         {strummings.map(({name, pattern}, index) => (
           <li key={index}>
-            <Strumming color={inverseColor} name={name} pattern={pattern} />
+            <Strumming colors={inverseColor} name={name} pattern={pattern} />
           </li>
         ))}
       </ul>

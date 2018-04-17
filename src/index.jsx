@@ -16,7 +16,7 @@ const strummingComponents = {
   'x': (width, color, index, xCenter) => <Mute color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
   '-': (width, color, index, xCenter) => <Line color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />
 }
-const chordNameHeight = 45
+const chordNameHeight = 41
 const yBase = chordNameHeight
 const viewBox = {
   height: 100 + lineThick + chordNameHeight,
@@ -25,7 +25,7 @@ const viewBox = {
   y: -lineThick / 2
 }
 
-const Strumming = ({ color, inverse, name, pattern, shuffle }) => {
+const Strumming = ({ colors, inverse, name, pattern, shuffle }) => {
   if (!name || !pattern) return null
 
   const baseClassName = cx('sb-Strumming', {
@@ -43,7 +43,7 @@ const Strumming = ({ color, inverse, name, pattern, shuffle }) => {
       const xCenter = (width * index) + (width / 2) - (lineThick / 2)
 
       component && components.push(
-        component(width, color, index, xCenter)
+        component(width, colors.simbols, index, xCenter)
       )
     })
 
@@ -52,14 +52,17 @@ const Strumming = ({ color, inverse, name, pattern, shuffle }) => {
 
   return (
     <svg className={baseClassName} viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}>
-      <Name color={color} name={name} xBase={viewBox.width / 2} yBase={yBase} />
+      <Name color={colors.strummingName} name={name} xBase={viewBox.width / 2} yBase={yBase} />
       {getComponents()}
     </svg>
   )
 }
 
 Strumming.propTypes = {
-  color: PropTypes.string,
+  colors: PropTypes.shape({
+    simbols: PropTypes.string.isRequired,
+    strummingName: PropTypes.string.isRequired
+  }),
   inverse: PropTypes.bool,
   name: PropTypes.string.isRequired,
   pattern: PropTypes.string.isRequired,
@@ -67,7 +70,10 @@ Strumming.propTypes = {
 }
 
 Strumming.defaultProps = {
-  color: '#000000',
+  colors: {
+    simbols: '#000000',
+    strummingName: '#000000'
+  },
   inverse: false,
   shuffle: false
 }
