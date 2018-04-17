@@ -4,8 +4,7 @@ import PropTypes from 'prop-types'
 const Up = ({ color, centerX, lineThick }) => (
   <g>
     <line stroke={color} x1={centerX} y1={'20'} x2={centerX} y2={'80'} strokeWidth={lineThick} strokeLinecap='round' />
-    <line stroke={color} x1={centerX} y1={'20'} x2={centerX - 15} y2={'35'} strokeWidth={lineThick} strokeLinecap='round' />
-    <line stroke={color} x1={centerX} y1={'20'} x2={centerX + 15} y2={'35'} strokeWidth={lineThick} strokeLinecap='round' />
+    <polyline stroke={color} points={`${centerX - 15},35 ${centerX},20 ${centerX + 15},35`} fill='none' strokeWidth={lineThick} strokeLinejoin='round' strokeLinecap='round' />
   </g>
 )
 
