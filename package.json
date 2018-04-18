@@ -1,6 +1,6 @@
 {
   "name": "react-svg-strumming",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React Svg Strumming Component",
   "main": "dist/",
   "scripts": {
@@ -53,7 +53,6 @@
     "sass-lint": "1.12.1"
   },
   "dependencies": {
-    "classnames": "2.2.5",
-    "down": "^0.2.5"
+    "classnames": "2.2.5"
   }
 }
