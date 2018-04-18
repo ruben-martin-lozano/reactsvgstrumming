@@ -16,10 +16,10 @@ const strummingComponents = {
   'x': (width, color, index, xCenter) => <Mute color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
   '-': (width, color, index, xCenter) => <Line color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />
 }
-const chordNameHeight = 41
-const yBase = chordNameHeight
+const strummingNameHeight = 41
+const yBase = strummingNameHeight
 const viewBox = {
-  height: 100 + lineThick + chordNameHeight,
+  height: 100 + lineThick + strummingNameHeight,
   width: 400,
   x: -lineThick / 2,
   y: -lineThick / 2
