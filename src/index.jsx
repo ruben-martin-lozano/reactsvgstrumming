@@ -37,10 +37,20 @@ const Strumming = ({ colors, inverse, name, pattern, shuffle }) => {
 
   const getComponents = () => {
     const components = []
+    const shuffleDeflect = (width / 2) - (lineThick / 2)
+    const hasShuffleDeflect = (index, strummingKey) => {
+      return shuffle && (index % 2) !== 0 &&
+        strummingKey.toLowerCase() === 'u' &&
+        patternSanitized.charAt(index + 1).toLowerCase() === 'd'
+    }
 
     patternSanitized.split('').map((strummingKey, index) => {
       const component = strummingComponents[strummingKey]
-      const xCenter = (width * index) + (width / 2) - (lineThick / 2)
+      let xCenter = (width * index) + (width / 2) - (lineThick / 2)
+
+      if (hasShuffleDeflect(index, strummingKey)) {
+        xCenter += shuffleDeflect
+      }
 
       component && components.push(
         component(width, colors.simbols, index, xCenter)
