@@ -1,27 +1,9 @@
 @import '../node_modules/normalize.css/normalize';
 @import '../src/index';
 
-$strumming-animation-duration: .5s;
-$strumming-animation-repeat: 1;
-$strumming-animation-effect: ease;
-$strumming-animation-1-starts: 0s;
-$strumming-animation-2-starts: $strumming-animation-1-starts + $strumming-animation-duration;
-$strumming-animation-3-starts: $strumming-animation-2-starts + $strumming-animation-duration;
-$strumming-animation-4-starts: $strumming-animation-3-starts + $strumming-animation-duration;
-$strumming-animation-5-starts: $strumming-animation-4-starts + $strumming-animation-duration;
-$strumming-animation-6-starts: $strumming-animation-5-starts + $strumming-animation-duration;
-$strumming-animation-7-starts: $strumming-animation-6-starts + $strumming-animation-duration;
-$strumming-animation-8-starts: $strumming-animation-7-starts + $strumming-animation-duration;
-$strumming-animation-9-starts: $strumming-animation-8-starts + $strumming-animation-duration;
-$strumming-animation-10-starts: $strumming-animation-9-starts + $strumming-animation-duration;
-$strumming-animation-11-starts: $strumming-animation-10-starts + $strumming-animation-duration;
-$strumming-animation-12-starts: $strumming-animation-11-starts + $strumming-animation-duration;
-
 $c-white: #ffffff;
 $c-black: #000000;
-$c-title: #ffffff;
-$c-inverse: #009688;
-$c-highlight: #f06292;
+$c-custom: #009688;
 
 html {
   overflow-x: hidden;
@@ -33,7 +15,7 @@ body {
 }
 
 h1 {
-  color: $c-inverse;
+  color: $c-custom;
   font-size: 8vw;
   margin: 0;
   padding: 1em 1% 0;
@@ -44,11 +26,33 @@ h1 {
   }
 }
 
+.demo-Custom {
+  h1 {
+    color: $c-custom;
+  }
+
+  svg {
+    line,
+    polyline {
+      stroke: $c-custom;
+    }
+    fill: $c-custom;
+  }
+}
+
 .demo-Inverse {
-  background: $c-inverse;
+  background: $c-custom;
 
   h1 {
     color: $c-white;
+  }
+
+  svg {
+    line,
+    polyline {
+      stroke: $c-white;
+    }
+    fill: $c-white;
   }
 }
 
@@ -62,70 +66,8 @@ ul {
   }
 
   li {
-    & {
-      list-style: none;
-      margin-bottom: 3em;
-      width: 100%;
-    }
-
-    &:hover {
-      g:nth-child(2) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-1-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(3) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-2-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(4) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-3-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(5) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-4-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(6) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-5-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(7) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-6-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(8) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-7-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(9) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-8-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(10) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-9-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(11) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-10-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(12) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-11-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-
-      g:nth-child(13) * {
-        animation: hightlight $strumming-animation-duration $strumming-animation-12-starts $strumming-animation-effect $strumming-animation-repeat;
-      }
-    }
-  }
-}
-
-@keyframes hightlight {
-  0% {
-    stroke: $c-highlight;
-  }
-
-  100% {
-    stroke: $c-highlight;
+    list-style: none;
+    margin-bottom: 3em;
+    width: 100%;
   }
 }
