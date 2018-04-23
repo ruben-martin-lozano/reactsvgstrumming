@@ -53,7 +53,7 @@ const strummings = [
 
 const demo = (
   <Fragment>
-    <h1 className='demo-Default'>Strumming Patterns (default)</h1>
+    <h1>Strumming Patterns (default)</h1>
     <ul>
       {strummings.map(({name, pattern, shuffle}, index) => (
         <li key={index}>
