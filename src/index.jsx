@@ -64,7 +64,7 @@ const Strumming = ({ lineThick, name, pattern, shuffle }) => {
 }
 
 Strumming.propTypes = {
-  lineThick: PropTypes.number.isRequired,
+  lineThick: PropTypes.number,
   name: PropTypes.string.isRequired,
   pattern: PropTypes.string.isRequired,
   shuffle: PropTypes.bool
