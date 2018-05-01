@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Arrow from './arrow'
 
-const Down = ({ color, isSmall, lineThick, position, width, xCenter, yBase }) => {
+const Down = ({ isSmall, lineThick, position, width, xCenter, yBase }) => {
   const yStart = !isSmall ? yBase : yBase + 20
   const yEnd = !isSmall ? yBase + 100 : yBase + 80
   const yDeflect = !isSmall ? yBase + 80 : yBase + 65
@@ -12,7 +12,6 @@ const Down = ({ color, isSmall, lineThick, position, width, xCenter, yBase }) =>
   return (
     <Arrow
       xCenter={xCenter}
-      color={color}
       lineThick={lineThick}
       points={points}
       yStart={yStart}
@@ -26,7 +25,6 @@ Down.defaultProps = {
 }
 
 Down.propTypes = {
-  color: PropTypes.string.isRequired,
   isSmall: PropTypes.bool,
   lineThick: PropTypes.number.isRequired,
   position: PropTypes.number.isRequired,

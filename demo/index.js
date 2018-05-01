@@ -48,7 +48,7 @@ const strummings = [
   { name: 'Emphasize the 3rd Downbeat', pattern: 'dud-D-' },
   { name: 'Semiquaver', pattern: 'D-d-uud-dudu' },
   { name: 'Semiquaver variation #1', pattern: 'D-Duddu-dudu' },
-  { name: 'Semiquaver with chunk', pattern: 'D-x-uud-dudu' },
+  { name: 'Semiquaver with chunk', pattern: 'D-x-uud-dudu' }
 ]
 
 const demo = (

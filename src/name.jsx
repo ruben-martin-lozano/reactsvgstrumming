@@ -1,21 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const Name = ({ name, xBase, yBase }) => (
-  <text
-    className='sb-StrummingName'
-    textAnchor='middle'
-    x={xBase}
-    y={yBase - 20}
-  >
+const Name = ({ name }) => (
+  <strong className='sb-StrummingName'>
     {name}
-  </text>
+  </strong>
 )
 
 Name.propTypes = {
-  name: PropTypes.string.isRequired,
-  xBase: PropTypes.number.isRequired,
-  yBase: PropTypes.number.isRequired
+  name: PropTypes.string.isRequired
 }
 
 export default Name

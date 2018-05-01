@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {Fragment} from 'react'
 import PropTypes from 'prop-types'
 import Down from './down'
 import Up from './up'
@@ -6,23 +6,21 @@ import Mute from './mute'
 import Line from './line'
 import Name from './name'
 
-const color = '#000000'
+const yBase = 0
 const strummingComponents = {
-  'D': (index, lineThick, width, xCenter) => <Down color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
-  'd': (index, lineThick, width, xCenter) => <Down color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} isSmall />,
-  'U': (index, lineThick, width, xCenter) => <Up color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
-  'u': (index, lineThick, width, xCenter) => <Up color={color} width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} isSmall />,
-  'x': (index, lineThick, width, xCenter) => <Mute color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
-  '-': (index, lineThick, width, xCenter) => <Line color={color} width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />
+  'D': (index, lineThick, width, xCenter) => <Down width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
+  'd': (index, lineThick, width, xCenter) => <Down width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} isSmall />,
+  'U': (index, lineThick, width, xCenter) => <Up width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
+  'u': (index, lineThick, width, xCenter) => <Up width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} isSmall />,
+  'x': (index, lineThick, width, xCenter) => <Mute width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
+  '-': (index, lineThick, width, xCenter) => <Line width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />
 }
-const strummingNameHeight = 41
-const yBase = strummingNameHeight
 
 const Strumming = ({ lineThick, name, pattern, shuffle }) => {
   if (!name || !pattern) return null
 
   const viewBox = {
-    height: 100 + lineThick + strummingNameHeight,
+    height: 100 + lineThick,
     width: 400,
     x: -lineThick / 2,
     y: -lineThick / 2
@@ -56,10 +54,12 @@ const Strumming = ({ lineThick, name, pattern, shuffle }) => {
   }
 
   return (
-    <svg className='sb-Strumming' viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}>
-      <Name name={name} xBase={viewBox.width / 2} yBase={yBase} />
-      {getComponents()}
-    </svg>
+    <Fragment>
+      <Name name={name} />
+      <svg className='sb-Strumming' viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}>
+        {getComponents()}
+      </svg>
+    </Fragment>
   )
 }
 
@@ -71,7 +71,7 @@ Strumming.propTypes = {
 }
 
 Strumming.defaultProps = {
-  lineThick: 5,
+  lineThick: 6,
   shuffle: false
 }
 
