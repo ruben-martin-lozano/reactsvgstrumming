@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import Strumming from '../src/index.jsx'
 
 const strummings = [
+  { pattern: 'D-------' },
   { name: 'Single Downbeat', pattern: 'D-------' },
   { name: 'Double Downbeats', pattern: 'D---D---' },
   { name: 'All Downbeats', pattern: 'D-D-D-D-' },

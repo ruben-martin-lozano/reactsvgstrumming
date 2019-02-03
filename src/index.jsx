@@ -17,7 +17,7 @@ const strummingComponents = {
 }
 
 const Strumming = ({ lineThick, name, pattern, shuffle }) => {
-  if (!name || !pattern) return null
+  if (!pattern) return null
 
   const viewBox = {
     height: 100 + lineThick,
@@ -55,8 +55,8 @@ const Strumming = ({ lineThick, name, pattern, shuffle }) => {
 
   return (
     <Fragment>
-      <Name name={name} />
-      <svg className='sb-Strumming' viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}>
+      {name && <Name name={name} />}
+      <svg className='Strumming' viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}>
         {getComponents()}
       </svg>
     </Fragment>
@@ -65,7 +65,7 @@ const Strumming = ({ lineThick, name, pattern, shuffle }) => {
 
 Strumming.propTypes = {
   lineThick: PropTypes.number,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   pattern: PropTypes.string.isRequired,
   shuffle: PropTypes.bool
 }
