@@ -4,6 +4,8 @@ import Down from './down'
 import Up from './up'
 import Mute from './mute'
 import Line from './line'
+import Dot from './dot'
+import Palm from './palm'
 import Name from './name'
 
 const yBase = 0
@@ -13,7 +15,9 @@ const strummingComponents = {
   'U': (index, lineThick, width, xCenter) => <Up width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
   'u': (index, lineThick, width, xCenter) => <Up width={width} position={index} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} isSmall />,
   'x': (index, lineThick, width, xCenter) => <Mute width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
-  '-': (index, lineThick, width, xCenter) => <Line width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />
+  '-': (index, lineThick, width, xCenter) => <Line width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
+  '.': (index, lineThick, width, xCenter) => <Dot width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />,
+  'p': (index, lineThick, width, xCenter) => <Palm width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />
 }
 
 const Strumming = ({ lineThick, name, pattern, shuffle }) => {

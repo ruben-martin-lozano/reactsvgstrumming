@@ -27,9 +27,15 @@ h1 {
   }
 
   svg {
+    circle,
     line,
     polyline {
       stroke: $c-custom;
+    }
+
+    .StrummingDot {
+      fill: $c-custom;
+      stroke: none;
     }
   }
 }
@@ -43,9 +49,15 @@ h1 {
   }
 
   svg {
+    circle,
     line,
     polyline {
       stroke: $c-white;
+    }
+
+    .StrummingDot {
+      fill: $c-white;
+      stroke: none;
     }
   }
 }
