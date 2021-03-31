@@ -1,6 +1,6 @@
 {
   "name": "react-svg-strumming",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "React Svg Strumming Component",
   "main": "dist/",
   "scripts": {
@@ -23,7 +23,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/ruben-martin-lozano/reactsvgstrumming#readme",
   "peerDependencies": {
-    "react": "0.14 || 15 || 16"
+    "react": "0.14 || 15 || 16 || 17"
   },
   "eslintConfig": {
     "extends": "./eslintrc.js"
