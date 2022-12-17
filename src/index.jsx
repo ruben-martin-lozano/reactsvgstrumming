@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react'
-import PropTypes from 'prop-types'
 import Down from './down'
 import Up from './up'
 import Mute from './mute'
@@ -20,7 +19,7 @@ const strummingComponents = {
   'p': (index, lineThick, width, xCenter) => <Palm width={width} lineThick={lineThick} key={index} xCenter={xCenter} yBase={yBase} />
 }
 
-const Strumming = ({ lineThick, name, pattern, shuffle }) => {
+const Strumming = ({ lineThick = 6, name, pattern, shuffle = false }) => {
   if (!pattern) return null
 
   const viewBox = {
@@ -65,18 +64,6 @@ const Strumming = ({ lineThick, name, pattern, shuffle }) => {
       </svg>
     </Fragment>
   )
-}
-
-Strumming.propTypes = {
-  lineThick: PropTypes.number,
-  name: PropTypes.string,
-  pattern: PropTypes.string.isRequired,
-  shuffle: PropTypes.bool
-}
-
-Strumming.defaultProps = {
-  lineThick: 6,
-  shuffle: false
 }
 
 export default Strumming

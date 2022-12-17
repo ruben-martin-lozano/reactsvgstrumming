@@ -1,5 +1,4 @@
-// import React, { Fragment } from 'react'
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import Strumming from '../src/index.jsx'
 

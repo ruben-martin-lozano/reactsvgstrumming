@@ -1,5 +1,4 @@
 import React, {Fragment} from 'react'
-import PropTypes from 'prop-types'
 
 const Arrow = ({ xCenter, lineThick, points, yStart, yEnd }) => {
   return (
@@ -8,14 +7,6 @@ const Arrow = ({ xCenter, lineThick, points, yStart, yEnd }) => {
       <polyline stroke='#000000' points={points} fill='none' strokeWidth={lineThick} strokeLinejoin='round' strokeLinecap='round' />
     </Fragment>
   )
-}
-
-Arrow.propTypes = {
-  xCenter: PropTypes.number.isRequired,
-  lineThick: PropTypes.number.isRequired,
-  points: PropTypes.string.isRequired,
-  yStart: PropTypes.number.isRequired,
-  yEnd: PropTypes.number.isRequired
 }
 
 export default Arrow
