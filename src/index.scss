@@ -1,10 +1,11 @@
 .Strumming {
   --c-strumming:#000;
   --c-strumming-hover:#C00;
-  --w-thinline: 6;
-  --w-thickline: 10;
+  --w-thinline: 8;
+  --w-thickline: 12;
 
   & {
+    cursor: pointer;
     display: block;
 
     &:hover {

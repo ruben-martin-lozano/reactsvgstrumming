@@ -12,14 +12,6 @@ const strummings = [
 
 const demo = (
   <Fragment>
-
-    <section className='Demo'>
-      <h1>Strumming Patterns (squared)</h1>
-      <ul>{strummings.map(({name, pattern}, index) => <li key={index}><Strumming name={name} pattern={pattern} isSquared /></li>)}</ul>
-    </section>
-
-
-
     <section className='Demo'>
       <h1>Strumming Patterns (default)</h1>
       <ul>{strummings.map(({name, pattern, shuffle}, index) => <li key={index}><Strumming name={name} pattern={pattern} shuffle={shuffle} /></li>)}</ul>

@@ -1,6 +1,6 @@
 const settings = {
-  thickLine: 10,
-  thinLine: 6
+  thickLine: 12,
+  thinLine: 8
 }
 
 export { settings }

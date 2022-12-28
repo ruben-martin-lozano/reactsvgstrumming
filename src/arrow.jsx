@@ -9,4 +9,4 @@ const Arrow = ({ xCenter, points, yStart, yEnd }) => {
   )
 }
 
-export default React.memo(Arrow)
+export default Arrow

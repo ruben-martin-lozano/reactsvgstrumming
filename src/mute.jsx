@@ -7,4 +7,4 @@ const Mute = ({ xCenter }) => (
   </Fragment>
 )
 
-export default React.memo(Mute)
+export default Mute
