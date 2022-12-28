@@ -1,22 +1,21 @@
 import React from 'react'
 import Arrow from './arrow'
 
-const Up = ({ isSmall = false, lineThick, position, width, xCenter, yBase }) => {
-  const yStart = !isSmall ? yBase : yBase + 20
-  const yEnd = !isSmall ? yBase + 100 : yBase + 80
-  const yDeflect = !isSmall ? yBase + 20 : yBase + 35
+const Up = ({ isSmall = false, width, xCenter }) => {
+  const yStart = !isSmall ? 5 : 23
+  const yEnd = !isSmall ? 100 : 80
+  const yDeflect = !isSmall ? 20 : 35
   const xDeflect = width > 45 ? (!isSmall ? 20 : 15) : width / 3
   const points = `${xCenter - xDeflect},${yDeflect} ${xCenter},${yStart} ${xCenter + xDeflect},${yDeflect}`
 
   return (
     <Arrow
       xCenter={xCenter}
-      lineThick={lineThick}
       points={points}
-      yStart={yStart}
+      yStart={yStart + 5}
       yEnd={yEnd}
     />
   )
 }
 
-export default Up
+export default React.memo(Up)

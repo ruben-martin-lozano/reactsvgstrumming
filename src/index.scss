@@ -1,15 +1,68 @@
 .Strumming {
+  --c-strumming:#000;
+  --c-strumming-hover:#C00;
+  --w-thinline: 6;
+  --w-thickline: 10;
+
   & {
     display: block;
+
+    &:hover {
+      .StrummingDot {
+        fill: var(--c-strumming-hover);
+      }
+
+      .StrummingPalm,
+      line,
+      polyline {
+        stroke: var(--c-strumming-hover);
+      }
+    }
   }
 
-  &Name {
-    display: block;
-    font-size: 7vw;
-    font-weight: bold;
-    margin: 0;
-    padding: 0 1em .5em;
-    text-align: center;
-    user-select: none;
+  &Dot {
+    fill: var(--c-strumming);
+    r: var(--w-thinline);
+  }
+
+  &Palm {
+    r: calc(var(--w-thinline) * 2);
+  }
+
+  &Palm,
+  line,
+  polyline {
+    fill: none;
+    stroke: var(--c-strumming);
+    stroke-width: var(--w-thinline);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  &--squared {
+    .StrummingPalm,
+    line,
+    polyline {
+      stroke-linecap: square;
+      stroke-linejoin: initial;
+    }
+  }
+
+  &--thick {
+    .StrummingPalm,
+    line,
+    polyline {
+      stroke-width: var(--w-thickline);
+    }
+
+    .Strumming {
+      &Dot {
+        r: var(--w-thickline);
+      }
+
+      &Palm {
+        r: calc(var(--w-thinline) * 3);
+      }
+    }
   }
 }

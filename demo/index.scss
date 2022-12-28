@@ -1,63 +1,48 @@
 @import '../src/index';
 
-$c-white: #ffffff;
-$c-custom: #009688;
+$c-dark: #333;
+$c-light: #eee;
+$c-custom: #ff6347;
 
-html {
-  overflow-x: hidden;
+.Strumming {
+  --c-strumming: #{$c-dark};
+  --c-strumming-hover: #{darken($c-dark, 25)};
 }
 
 body {
-  background: $c-white;
-  font-family: 'Roboto', sans-serif;
+  font-family: sans-serif;
+  margin: 0;
 }
 
 h1 {
+  color: $c-dark;
   font-size: 8vw;
   margin: 0;
-  padding: 1em 1% 0;
+  padding: 1em 0 0;
   text-align: center;
 }
 
-.demo-Custom {
-  h1,
-  strong {
+.DemoCustom {
+  h1 {
     color: $c-custom;
   }
 
-  svg {
-    circle,
-    line,
-    polyline {
-      stroke: $c-custom;
-    }
-
-    .StrummingDot {
-      fill: $c-custom;
-      stroke: none;
-    }
+  .Strumming {
+    --c-strumming: #{$c-custom};
+    --c-strumming-hover: #{darken($c-custom, 25)};
   }
 }
 
-.demo-Inverse {
+.DemoInverse {
   background: $c-custom;
 
-  h1,
-  strong {
-    color: $c-white;
+  h1 {
+    color: $c-light;
   }
 
-  svg {
-    circle,
-    line,
-    polyline {
-      stroke: $c-white;
-    }
-
-    .StrummingDot {
-      fill: $c-white;
-      stroke: none;
-    }
+  .Strumming {
+    --c-strumming: #{$c-light};
+    --c-strumming-hover: #{darken($c-light, 25)};
   }
 }
 
@@ -67,12 +52,11 @@ ul {
     flex-wrap: wrap;
     justify-content: center;
     margin: 0 auto;
-    padding: 2.5em 0 1.5em;
+    padding: 1em 0 0;
   }
 
   li {
     list-style: none;
-    margin-bottom: 3em;
     width: 100%;
   }
 }
