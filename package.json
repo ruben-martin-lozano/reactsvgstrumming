@@ -1,6 +1,6 @@
 {
   "name": "react-svg-strumming",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "author": "Rubén Martín Lozano <ruben.martin.lozano@gmail.com>",
   "files": ["dist"],
   "license": "ISC",
