@@ -11,14 +11,14 @@ import { settings } from './settings'
 const { thinLine, thickLine } = settings
 
 const strummingComponents = {
-  'D': ({ index, width, xCenter }) => <Down width={width} key={index} xCenter={xCenter} />,
-  'd': ({ index, width, xCenter }) => <Down width={width} key={index} xCenter={xCenter} isSmall />,
-  'U': ({ index, width, xCenter }) => <Up width={width} key={index} xCenter={xCenter} />,
-  'u': ({ index, width, xCenter }) => <Up width={width} key={index} xCenter={xCenter} isSmall />,
-  'x': ({ index, xCenter }) => <Mute key={index} xCenter={xCenter} />,
+  D: ({ index, width, xCenter }) => <Down width={width} key={index} xCenter={xCenter} />,
+  d: ({ index, width, xCenter }) => <Down width={width} key={index} xCenter={xCenter} isSmall />,
+  U: ({ index, width, xCenter }) => <Up width={width} key={index} xCenter={xCenter} />,
+  u: ({ index, width, xCenter }) => <Up width={width} key={index} xCenter={xCenter} isSmall />,
+  x: ({ index, xCenter }) => <Mute key={index} xCenter={xCenter} />,
   '-': ({ index, xCenter }) => <Line key={index} xCenter={xCenter} />,
   '.': ({ index, xCenter, isSquared }) => <Dot key={index} xCenter={xCenter} isSquared={isSquared} />,
-  'p': ({ index, xCenter, isSquared }) => <Palm key={index} xCenter={xCenter} isSquared={isSquared} />
+  p: ({ index, xCenter, isSquared }) => <Palm key={index} xCenter={xCenter} isSquared={isSquared} />
 }
 
 const Strumming = ({ isSquared = false, isThick = false, name, pattern, shuffle = false }) => {
@@ -43,7 +43,7 @@ const Strumming = ({ isSquared = false, isThick = false, name, pattern, shuffle 
         patternSanitized.charAt(index + 1).toLowerCase() === 'd'
     }
 
-    patternSanitized.split('').map((strummingKey, index) => {
+    patternSanitized.split('').forEach((strummingKey, index) => {
       const component = strummingComponents[strummingKey]
       let xCenter = (width * index) + (width / 2) - (lineThick / 2)
 

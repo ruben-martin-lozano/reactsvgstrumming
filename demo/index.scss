@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import '../src/index';
 
 $c-dark: #333;
@@ -6,7 +7,7 @@ $c-custom: #ff6347;
 
 .Strumming {
   --c-strumming: #{$c-dark};
-  --c-strumming-hover: #{darken($c-dark, 25)};
+  --c-strumming-hover: #{color.adjust($c-dark, $lightness: -25%)};
 }
 
 body {
@@ -29,7 +30,7 @@ h1 {
 
   .Strumming {
     --c-strumming: #{$c-custom};
-    --c-strumming-hover: #{darken($c-custom, 25)};
+    --c-strumming-hover: #{color.adjust($c-custom, $lightness: -25%)};
   }
 }
 
@@ -42,18 +43,16 @@ h1 {
 
   .Strumming {
     --c-strumming: #{$c-light};
-    --c-strumming-hover: #{darken($c-light, 25)};
+    --c-strumming-hover: #{color.adjust($c-light, $lightness: -25%)};
   }
 }
 
 ul {
-  & {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 1em 0 0;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 1em 0 0;
 
   li {
     list-style: none;

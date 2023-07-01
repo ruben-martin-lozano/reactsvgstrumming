@@ -1,6 +1,6 @@
 {
   "name": "react-svg-strumming",
-  "version": "1.3.1",
+  "version": "1.4.0",
   "author": "Rubén Martín Lozano <ruben.martin.lozano@gmail.com>",
   "files": ["dist"],
   "license": "ISC",
@@ -19,18 +19,25 @@
     "clean": "rimraf dist",
     "dev": "code . && parcel demo/index.html --open --port=1226",
     "fenix": "rimraf package-lock.json && rimraf node_modules && npm i -s --prefer-online --no-fund --no-audit",
+    "lint": "stylelint '**/*.scss' --fix && standard --fix",
     "prebuild": "npm run clean",
-    "prepublishOnly": "npm run build"
+    "precommit": "npm run lint",
+    "prepublishOnly": "npm run build",
+    "prepare": "husky install"
   },
   "dependencies": {
     "classnames": "2.3.2"
   },
   "devDependencies": {
-    "@parcel/transformer-sass": "2.8.2",
-    "parcel": "2.8.2",
+    "@parcel/transformer-sass": "2.9.3",
+    "husky": "8.0.0",
+    "parcel": "2.9.3",
     "process": "0.11.10",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "standard": "17.1.0",
+    "stylelint-config-sass-guidelines": "10.0.0",
+    "stylelint": "15.9.0"
   },
   "peerDependencies": {
     "react": "0.14 || 15 || 16 || 17 || 18"
